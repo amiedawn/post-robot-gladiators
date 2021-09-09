@@ -84,7 +84,7 @@ var startGame = function() {
         var storeConfirm = window.confirm("The fight is over, visit the store before the next round?");
 
         // if yes, take them to the store() function
-        if (shopConfirm) {
+        if (storeConfirm) {
           shop();  
         }
         
@@ -153,8 +153,19 @@ var randomNumber = function(min, max) {
   return value;
 };
 
+var getPlayerName = function() {
+  var name = "";
+
+  while (name === "" || name === null) {
+    name = prompt("What is your robot's name?");
+  }
+
+  console.log("Your robot's name is " + name);
+  return name;
+}
+
 var playerInfo = {
-  name: window.prompt("What is your robot's name?"),
+  name: getPlayerName(),
   health: 100,
   attack: 10,
   money: 10,
